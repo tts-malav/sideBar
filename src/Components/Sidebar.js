@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
   const [open, setopen] = useState(true);
+  const navigate = useNavigate();
+
+  const handlePageClick = (page) => {
+    navigate(`/${page}`);
+  };
   
   return (
     <>
@@ -27,35 +33,37 @@ const Sidebar = () => {
           </button>
         </div>
         <div className={`py-4 flex flex-col ${!open && 'items-center'}`}>
-          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}>
+          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`} 
+            onClick={() => handlePageClick('about')}>
             <p></p>
             <img className='h-8' src='accounts.svg' alt='' />
             <p className={`${!open && 'hidden'} text-white font-semibold`}>About</p>
           </button>
-          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}>
+          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}
+           onClick={() => handlePageClick('projects')}>
             <p></p>
             <img className='h-8' src='projects.svg' alt='' />
             <p className={`${!open && 'hidden'} text-white font-semibold`}>Projects</p>
           </button>
-          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}>
+          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}
+           onClick={() => handlePageClick('we')}>
             <p></p>
             <img className='h-8' src='work.svg' alt='' />
             <p className={`${!open && 'hidden'} text-white font-semibold`}>Work Experience</p>
           </button>
-          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}>
+          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}
+           onClick={() => handlePageClick('tasks')}>
             <p></p>
             <img className='h-8' src='tasks.svg' alt='' />
             <p className={`${!open && 'hidden'} text-white font-semibold`}>Tasks</p>
           </button>
-          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}>
+          <button className={`rounded-md py-2 hover:bg-slate-400 my-1 flex ${open && 'space-x-4'} items-center`}
+           onClick={() => handlePageClick('contact')}>
             <p></p>
             <img className='h-8' src='contact.svg' alt='' />
             <p className={`${!open && 'hidden'} text-white font-semibold`}>Contact</p>
           </button>
         </div>
-      </div>
-      <div className='p-7 text-2xl font-semibold flex-1 h-screen '>
-        Home
       </div>
     </div>
       
