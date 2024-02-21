@@ -1,11 +1,12 @@
 import React from 'react'
+import NavbarA from '../Components/NavbarA'
+import HeroSection from '../Components/HeroSection'
 
 const About = () => {
   return (
     <>
-    <div className='p-7 text-2xl font-semibold flex-1 h-screen '>
-        About
-    </div>
+    <NavbarA />
+    <HeroSection />
     </>
   )
 }
