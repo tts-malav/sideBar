@@ -13,7 +13,7 @@ function App() {
     <>
     <BrowserRouter >
     <div className='flex'>
-      <div>
+      <div className=''>
         <Sidebar />
       </div>
       <div>
